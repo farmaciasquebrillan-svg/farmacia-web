@@ -1,21 +1,116 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farmacias Que Brillan - Contacto</title>
-  <!-- Cargamos los estilos básicos para que se vea limpio y profesional -->
-  <style>
-    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background-color: #0f172a; }
-    footer a { transition: color 0.2s; text-decoration: none; }
-    footer a:hover { color: #ffffff !important; }
-    button:hover { color: #ffffff !important; }
-  </style>
-</head>
-<body>
+import React from 'react';
+import { Mail, MapPin, Linkedin, Instagram } from 'lucide-react';
 
-  <!-- PIE DE PÁGINA (FOOTER) -->
-  <footer id="contacto" style="background-color: #111827; color: #ffffff; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid #1f2937;">
+interface FooterProps {
+  onOpenLegal?: (type: 'aviso-legal' | 'privacidad') => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
+  return (
+    <footer id="contacto" className="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <div className="col-span-1 lg:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <img
+                src="https://i.postimg.cc/2jH8XVVQ/Farmacias_Que_Brillan_Logo2.png"
+                alt="Logo Farmacias Que Brillan"
+                className="h-10 w-auto"
+                onError={(e) => {
+                  (e.target as HTMLElement).style.display = 'none';
+                }}
+              />
+              <span className="font-bold text-2xl text-teal-300 tracking-tight font-serif">
+                Farmacias Que Brillan
+              </span>
+            </div>
+            <p className="text-gray-400 mb-6 max-w-sm text-sm leading-relaxed">
+              Impulsamos el bienestar del titular y la conexión humana en el mostrador para hacer brillar tu farmacia con luz propia.
+            </p>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-bold text-lg mb-4 text-amber-400 font-serif">Contacto</h4>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li className="flex items-center">
+                <Mail className="w-4 h-4 mr-2 text-teal-400 shrink-0" />
+                <a
+                  href="mailto:farmaciasquebrillan@gmail.com"
+                  className="hover:text-white transition"
+                >
+                  farmaciasquebrillan@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <MapPin className="w-4 h-4 mr-2 text-teal-400 shrink-0" />
+                <span>Madrid, España</span>
+              </li>
+              <li className="flex items-center">
+                <Linkedin className="w-4 h-4 mr-2 text-teal-400 shrink-0" />
+                <a
+                  href="https://www.linkedin.com/in/dori-morán"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white break-all transition"
+                >
+                  www.linkedin.com/in/dori-morán
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h4 className="font-bold text-lg mb-4 text-amber-400 font-serif">Conectemos</h4>
+            <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+              Acompáñanos en redes para compartir inspiración, liderazgo consciente y farmacia con alma.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href="https://www.linkedin.com/in/dori-morán"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition p-2 hover:bg-gray-800 rounded-lg"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/farmaciasquebrillan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition p-2 hover:bg-gray-800 rounded-lg"
+                aria-label="Instagram @farmaciasquebrillan"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+          <p>&copy; 2025 Farmacias Que Brillan. Todos los derechos reservados.</p>
+          <div className="flex space-x-6">
+            <button
+              type="button"
+              onClick={() => onOpenLegal?.('aviso-legal')}
+              className="hover:text-white transition cursor-pointer text-left"
+            >
+              Aviso Legal
+            </button>
+            <button
+              type="button"
+              onClick={() => onOpenLegal?.('privacidad')}
+              className="hover:text-white transition cursor-pointer text-left"
+            >
+              Política de Privacidad
+            </button>
+          </div>
+        </div>
+      </div>
+    <footer id="contacto" style="background-color: #111827; color: #ffffff; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid #1f2937; font-family: sans-serif;">
     <div style="max-w: 80rem; margin: 0 auto; padding: 0 1.5rem;">
       
       <!-- Contenedor de Columnas en Cuadrícula -->
@@ -40,7 +135,7 @@
           <ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.875rem; line-height: 2;">
             <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
               <span style="margin-right: 0.5rem; color: #2dd4bf;">✉️</span>
-              <a href="mailto:farmaciasquebrillan@gmail.com" style="color: #9ca3af;">farmaciasquebrillan@gmail.com</a>
+              <a href="mailto:farmaciasquebrillan@gmail.com" style="color: #9ca3af; text-decoration: none;">farmaciasquebrillan@gmail.com</a>
             </li>
             <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
               <span style="margin-right: 0.5rem; color: #2dd4bf;">📍</span>
@@ -48,7 +143,7 @@
             </li>
             <li style="display: flex; align-items: center;">
               <span style="margin-right: 0.5rem; color: #2dd4bf;">💼</span>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; word-break: break-all;">://linkedin.com</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; text-decoration: none; word-break: break-all;">://linkedin.com</a>
             </li>
           </ul>
         </div>
@@ -60,8 +155,8 @@
             Acompáñanos en redes para compartir inspiración, liderazgo consciente y farmacia con alma.
           </p>
           <div style="display: flex; gap: 0.75rem;">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; background-color: #1f2937; padding: 0.5rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.25rem; font-size: 0.875rem;">💼 LinkedIn</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; background-color: #1f2937; padding: 0.5rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.25rem; font-size: 0.875rem;">📸 Instagram</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; background-color: #1f2937; padding: 0.5rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.25rem; font-size: 0.875rem; text-decoration: none;">💼 LinkedIn</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; background-color: #1f2937; padding: 0.5rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.25rem; font-size: 0.875rem; text-decoration: none;">📸 Instagram</a>
           </div>
         </div>
 
@@ -105,7 +200,6 @@
       document.getElementById('modalLegal').style.display = 'none';
     }
 
-    // Cierra la ventana si el usuario hace clic en el fondo oscuro exterior
     window.onclick = function(event) {
       const modal = document.getElementById('modalLegal');
       if (event.target == modal) {
