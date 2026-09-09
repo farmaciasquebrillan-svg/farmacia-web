@@ -1,97 +1,118 @@
-import React from 'react';
-import { Mail, MapPin, Linkedin, Instagram } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmacias Que Brillan - Contacto</title>
+  <!-- Cargamos los estilos básicos para que se vea limpio y profesional -->
+  <style>
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background-color: #0f172a; }
+    footer a { transition: color 0.2s; text-decoration: none; }
+    footer a:hover { color: #ffffff !important; }
+    button:hover { color: #ffffff !important; }
+  </style>
+</head>
+<body>
 
-interface FooterProps {
-  onOpenLegal?: (type: 'aviso-legal' | 'privacidad') => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
-  return (
-    <footer id="contacto" style="background-color: #111827; color: #ffffff; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid #1f2937; font-family: sans-serif;">
-  <div style="max-w: 80rem; margin: 0 auto; padding: 0 1rem;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+  <!-- PIE DE PÁGINA (FOOTER) -->
+  <footer id="contacto" style="background-color: #111827; color: #ffffff; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid #1f2937;">
+    <div style="max-w: 80rem; margin: 0 auto; padding: 0 1.5rem;">
       
-      <!-- Marca -->
-      <div style="grid-column: span 1;">
-        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-          <img src="https://i.postimg.cc/2jH8XVVQ/Farmacias_Que_Brillan_Logo2.png" alt="Logo Farmacias Que Brillan" style="height: 2.5rem; width: auto;">
-          <span style="font-weight: bold; font-size: 1.5rem; color: #5eead4; font-family: serif;">
-            Farmacias Que Brillan
-          </span>
+      <!-- Contenedor de Columnas en Cuadrícula -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+        
+        <!-- Columna 1: Marca y Logo -->
+        <div style="grid-column: span 1;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="https://postimg.cc" alt="Logo Farmacias Que Brillan" style="height: 2.5rem; width: auto;" onerror="this.style.display='none'">
+            <span style="font-weight: bold; font-size: 1.5rem; color: #5eead4; font-family: Georgia, serif; tracking-tight: -0.025em;">
+              Farmacias Que Brillan
+            </span>
+          </div>
+          <p style="color: #9ca3af; margin-bottom: 1.5rem; max-w: 24rem; font-size: 0.875rem; line-height: 1.6;">
+            Impulsamos el bienestar del titular y la conexión humana en el mostrador para hacer brillar tu farmacia con luz propia.
+          </p>
         </div>
-        <p style="color: #9ca3af; margin-bottom: 1.5rem; max-w: 24rem; font-size: 0.875rem; line-height: 1.6;">
-          Impulsamos el bienestar del titular y la conexión humana en el mostrador para hacer brillar tu farmacia con luz propio.
-        </p>
+
+        <!-- Columna 2: Datos de Contacto -->
+        <div>
+          <h4 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 1rem; color: #fbbf24; font-family: Georgia, serif;">Contacto</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.875rem; line-height: 2;">
+            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+              <span style="margin-right: 0.5rem; color: #2dd4bf;">✉️</span>
+              <a href="mailto:farmaciasquebrillan@gmail.com" style="color: #9ca3af;">farmaciasquebrillan@gmail.com</a>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+              <span style="margin-right: 0.5rem; color: #2dd4bf;">📍</span>
+              <span>Madrid, España</span>
+            </li>
+            <li style="display: flex; align-items: center;">
+              <span style="margin-right: 0.5rem; color: #2dd4bf;">💼</span>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; word-break: break-all;">://linkedin.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Redes Sociales -->
+        <div>
+          <h4 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 1rem; color: #fbbf24; font-family: Georgia, serif;">Conectemos</h4>
+          <p style="font-size: 0.875rem; color: #9ca3af; margin-bottom: 1.25rem; line-height: 1.6;">
+            Acompáñanos en redes para compartir inspiración, liderazgo consciente y farmacia con alma.
+          </p>
+          <div style="display: flex; gap: 0.75rem;">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; background-color: #1f2937; padding: 0.5rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.25rem; font-size: 0.875rem;">💼 LinkedIn</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; background-color: #1f2937; padding: 0.5rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.25rem; font-size: 0.875rem;">📸 Instagram</a>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Contacto -->
-      <div>
-        <h4 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 1rem; color: #fbbf24; font-family: serif;">Contacto</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.875rem; line-height: 2;">
-          <li>✉️ <a href="mailto:farmaciasquebrillan@gmail.com" style="color: #9ca3af; text-decoration: none;">farmaciasquebrillan@gmail.com</a></li>
-          <li>📍 Madrid, España</li>
-          <li>💼 <a href="https://www.linkedin.com/in/dori-morán" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; text-decoration: none; word-break: break-all;">www.linkedin.com/in/dori-morán</a></li>
-        </ul>
-      </div>
-
-      <!-- Redes Sociales -->
-      <div>
-        <h4 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 1rem; color: #fbbf24; font-family: serif;">Conectemos</h4>
-        <p style="font-size: 0.875rem; color: #9ca3af; margin-bottom: 1rem; line-height: 1.6;">
-          Acompáñanos en redes para compartir inspiración, liderazgo consciente y farmacia con alma.
-        </p>
-        <div style="display: flex; gap: 1rem;">
-          <a href="https://www.linkedin.com/in/dori-morán" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; text-decoration: none; font-size: 1.25rem;">🔗 LinkedIn</a>
-          <a href="https://www.instagram.com/farmaciasquebrillan" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; text-decoration: none; font-size: 1.25rem;">📸 Instagram</a>
+      <!-- Barra Inferior de Derechos y Botones Legales -->
+      <div style="border-top: 1px solid #1f2937; padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 0.875rem; color: #6b7280; gap: 1rem;">
+        <p style="margin: 0;">&copy; 2026 Farmacias Que Brillan. Todos los derechos reservados.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <button type="button" onclick="abrirModal('aviso-legal')" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 0.875rem; padding: 0; transition: color 0.2s;">Aviso Legal</button>
+          <button type="button" onclick="abrirModal('privacidad')" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 0.875rem; padding: 0; transition: color 0.2s;">Política de Privacidad</button>
         </div>
       </div>
 
     </div>
+  </footer>
 
-    <!-- Barra Inferior de Botones Legales -->
-    <div style="border-top: 1px solid #1f2937; padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 0.875rem; color: #6b7280; gap: 1rem;">
-      <p>&copy; 2026 Farmacias Que Brillan. Todos los derechos reservados.</p>
-      <div style="display: flex; gap: 1.5rem;">
-        <button type="button" onclick="abrirModal('aviso-legal')" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 0.875rem;">Aviso Legal</button>
-        <button type="button" onclick="abrirModal('privacidad')" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 0.875rem;">Política de Privacidad</button>
-      </div>
+  <!-- VENTANA EMERGENTE (MODAL) PARA TEXTOS LEGALES -->
+  <div id="modalLegal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center;">
+    <div style="background-color: #ffffff; color: #111827; padding: 2rem; border-radius: 0.5rem; max-width: 600px; width: 90%; max-height: 75vh; overflow-y: auto; position: relative;">
+      <span onclick="cerrarModal()" style="position: absolute; top: 0.75rem; right: 1rem; font-size: 1.75rem; cursor: pointer; color: #9ca3af; font-weight: bold;">&times;</span>
+      <h2 id="modalTitulo" style="margin-top: 0; color: #111827; font-family: Georgia, serif; font-size: 1.5rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem;"></h2>
+      <div id="modalContenido" style="font-size: 0.95rem; line-height: 1.6; color: #374151; white-space: pre-line; margin-top: 1rem;"></div>
     </div>
   </div>
-</footer>
 
-<!-- VENTANA EMERGENTE (MODAL) PARA TEXTOS LEGALES -->
-<div id="modalLegal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center;">
-  <div style="background-color: white; color: #111827; padding: 2rem; border-radius: 0.5rem; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; font-family: sans-serif;">
-    <span onclick="cerrarModal()" style="position: absolute; top: 1rem; right: 1rem; font-size: 1.5rem; cursor: pointer; color: #6b7280;">&times;</span>
-    <h2 id="modalTitulo" style="margin-top: 0; color: #111827; font-family: serif;"></h2>
-    <div id="modalContenido" style="font-size: 0.95rem; line-height: 1.6; color: #374151; white-space: pre-line;"></div>
-  </div>
-</div>
+  <!-- COMPORTAMIENTO INTERACTIVO -->
+  <script>
+    const textosLegales = {
+      'aviso-legal': `AVISO LEGAL\n\nEn cumplimiento del artículo 10 de la Ley 34/2002, del 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, se reflejan los siguientes datos: El titular del dominio web es Dori Morán, con correo electrónico de contacto farmaciasquebrillan@gmail.com.\n\nEste sitio web tiene como objetivo proveer información sobre consultoría y mejora de procesos en el mostrador farmacéutico.`,
+      'privacidad': `POLÍTICA DE PRIVACIDAD\n\nDe conformidad con lo dispuesto en el Reglamento General de Protección de Datos (RGPD), le informamos que los datos personales que nos facilite a través de nuestro correo electrónico de contacto serán tratados bajo la responsabilidad de Dori Morán.\n\nSus datos se utilizarán exclusivamente para responder a sus solicitudes de información. No se cederán datos a terceros salvo obligación legal.`
+    };
 
-<!-- CÓDIGO JAVASCRIPT QUE HACE FUNCIONAR LOS BOTONES -->
-<script>
-  const textosLegales = {
-    'aviso-legal': `AVISO LEGAL\n\nEn cumplimiento del artículo 10 de la Ley 34/2002, del 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, se reflejan los siguientes datos: El titular del dominio web es Dori Morán, con correo electrónico de contacto farmaciasquebrillan@gmail.com.\n\nEste sitio web tiene como objetivo proveer información sobre consultoría y mejora de procesos en el mostrador farmacéutico.`,
-    'privacidad': `POLÍTICA DE PRIVACIDAD\n\nDe conformidad con lo dispuesto en el Reglamento General de Protección de Datos (RGPD), le informamos que los datos personales que nos facilite a través de nuestro correo electrónico de contacto serán tratados bajo la responsabilidad de Dori Morán.\n\nSus datos se utilizarán exclusivamente para responder a sus solicitudes de información. No se cederán datos a terceros salvo obligación legal.`
-  };
-
-  function abrirModal(tipo) {
-    document.getElementById('modalTitulo').innerText = tipo === 'aviso-legal' ? 'Aviso Legal' : 'Política de Privacidad';
-    document.getElementById('modalContenido').innerText = textosLegales[tipo];
-    document.getElementById('modalLegal').style.display = 'flex';
-  }
-
-  function cerrarModal() {
-    document.getElementById('modalLegal').style.display = 'none';
-  }
-
-  // Cerrar ventana si se hace clic fuera del recuadro blanco
-  window.onclick = function(event) {
-    const modal = document.getElementById('modalLegal');
-    if (event.target == modal) {
-      modal.style.display = 'none';
+    function abrirModal(tipo) {
+      document.getElementById('modalTitulo').innerText = tipo === 'aviso-legal' ? 'Aviso Legal' : 'Política de Privacidad';
+      document.getElementById('modalContenido').innerText = textosLegales[tipo];
+      document.getElementById('modalLegal').style.display = 'flex';
     }
-  }
-</script>
-  );
-};
+
+    function cerrarModal() {
+      document.getElementById('modalLegal').style.display = 'none';
+    }
+
+    // Cierra la ventana si el usuario hace clic en el fondo oscuro exterior
+    window.onclick = function(event) {
+      const modal = document.getElementById('modalLegal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
